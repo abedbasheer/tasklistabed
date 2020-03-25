@@ -15,4 +15,12 @@ public function show($id){
 $task = DB::table('tasks')->find($id);
 return view('tasks.show',compact('task'));    
 }
+public function store(Request $request){
+DB::table('tasks')->insert([
+    'name'=>$request->name,
+    'created_at'=> now(),
+    'updated_at'=> now(),
+]);
+return redirect()->back();
+}
 }

@@ -23,4 +23,16 @@ DB::table('tasks')->insert([
 ]);
 return redirect()->back();
 }
+public function destroy($id){
+    DB::table('tasks')->where('id','=',$id)->delete(); 
+    return redirect()->back();
+}
+public function edit(Request $request){
+    DB::table('tasks')->update([
+        'name'=>$request->name,
+        'created_at'=> now(),
+        'updated_at'=> now(),
+    ]);
+    return redirect()->back();
+}
 }

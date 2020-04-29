@@ -7,8 +7,13 @@
 
     Route::get('task/{id}', 'TaskController@show');
     
-    Route::post('store', 'TaskController@store');
+    Route::post('store', 'TaskController@store')->name('store');
 
     Route::delete('delete/{id}', 'TaskController@destroy');
 
-    Route::update('update', 'TaskController@edit');
+    Route::put('edit/{id}', 'TaskController@edit');
+
+    Route::patch('update/{id}','TaskController@update')->name('update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

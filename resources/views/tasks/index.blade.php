@@ -19,7 +19,7 @@
         </ul>
     </div>
 @endif
-                    <form action="store" method="POST" class="form-horizontal">
+                    <form action="{{route('store')}}" method="POST" class="form-horizontal">
 @csrf
                         <!-- Task Name -->
                         <div class="form-group">
@@ -71,7 +71,7 @@
                                         </td>
                                         <!-- Task Update Button -->
                                         <td>
-                                            <form action="update" method="POST">
+                                            <form action="{{route('update')}}" method="POST">
                                             @csrf
                                                 <button type="submit" class="btn btn-danger">
                                                     <i class="fa fa-btn fa-trash"></i>Update
